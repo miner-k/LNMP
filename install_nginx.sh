@@ -1,13 +1,16 @@
 #!/bin/bash
+# version:0.1.1
+# author:miner-k
 
-wget http://nginx.org/download/nginx-1.12.1.tar.gz
+
+#wget http://nginx.org/download/nginx-1.12.1.tar.gz
 
 yum -y install pcre-devel
 yum -y groupinstall  "Development tools"
+yum -y install openssl-devel
 
 
-
-
+NGINX_PKG=nginx-1.12.1.tar.gz
 PREFIX=/usr/local
 SBIN_PATH=/usr/local/nginx/nginx
 CONF_PATH=/etc/nginx/nginx.conf
@@ -29,7 +32,12 @@ install(){
         cd ..
 }
 
-unpack
+#增加nginx用户名和用户组
+useradd nginx
+
+#解压nginx
+unpack $NGINX_PKG
+
 
 ./configure \
   --prefix=$PREFIX \
@@ -52,9 +60,10 @@ unpack
   --http-scgi-temp-path=/var/tmp/nginx/scgi \
   --with-pcre
 
+#安装nginx
 install
 
-
+#设置启动脚本
 cp nginx /etc/init.d/
 chmod +x /etc/init.d/nginx
 chkconfig --add nginx
