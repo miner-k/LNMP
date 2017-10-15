@@ -1,0 +1,69 @@
+#!/bin/bash
+## config
+
+
+#################################################
+# 		global variables		#
+#################################################
+# 源码包编译安装的存放位置
+PREFIX=/usr/local
+
+
+
+
+
+#################################################
+# 		nginx variables			#
+#################################################
+
+NGINX_PKG=nginx-1.12.1.tar.gz
+SBIN_PATH=/usr/local/nginx/nginx
+CONF_PATH=/etc/nginx/nginx.conf
+PID_PATH=/var/run/nginx/nginx.pid
+ERROR_LOG_PATH=/var/log/nginx/error.log
+HTTP_LOG_PATH=/var/log/nginx/access.log
+LOCK_PATH=/var/lock/nginx.lock
+
+
+export PREFIX NGINX_PKG SBIN_PATH CONF_PATH PID_PATH ERROR_LOG_PATH HTTPD_CONFIG LOCK_PATH
+
+
+
+##############################################
+# 		MySQL variables  	     #
+##############################################
+
+# mysql的安装包全称
+MySQL_PACK=mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+
+# mysql的数据存放位置
+DATADIR=/var/lib/mysql 
+
+export MySQL_PACK DATADIR
+
+
+
+#############################################
+# 		PHP-fpm variables  	    #
+#############################################
+
+# fpm中动态网站的存放位置
+WEB_DATA=/www
+
+# php的安装包的全称
+PHP_PACK=php-7.0.21.tar.gz
+
+export WEB_DATA PHP_PACK
+
+##########################
+# nginx_PHP-fpm variales #
+##########################
+
+# nginx的配置文件的目录
+CONF_PATH_DIR=/etc/nginx
+
+# nginx中跳转向fpm的IP地址（FPM服务器的IP地址）
+FPM_IP=127.0.0.1
+
+export CONF_PATH_DIR  FPM_IP
+
