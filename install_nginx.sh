@@ -10,14 +10,14 @@ yum -y groupinstall  "Development tools"
 yum -y install openssl-devel
 
 
-NGINX_PKG=nginx-1.12.1.tar.gz
-PREFIX=/usr/local
-SBIN_PATH=/usr/local/nginx/nginx
-CONF_PATH=/etc/nginx/nginx.conf
-PID_PATH=/var/run/nginx/nginx.pid
-ERROR_LOG_PATH=/var/log/nginx/error.log
-HTTP_LOG_PATH=/var/log/nginx/access.log
-LOCK_PATH=/var/lock/nginx.lock
+#NGINX_PKG=nginx-1.12.1.tar.gz
+#PREFIX=/usr/local
+#SBIN_PATH=/usr/local/nginx/nginx
+#CONF_PATH=/etc/nginx/nginx.conf
+#PID_PATH=/var/run/nginx/nginx.pid
+#ERROR_LOG_PATH=/var/log/nginx/error.log
+#HTTP_LOG_PATH=/var/log/nginx/access.log
+#LOCK_PATH=/var/lock/nginx.lock
 
 
 unpack(){
